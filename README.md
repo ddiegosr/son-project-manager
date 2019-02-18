@@ -1,8 +1,8 @@
-#SON-Project-Manager
+# SON-Project-Manager
 
 This is a simple Project Manager, built with VueJS and PHP.
 
-##Setup
+## Setup
 This project was developed using Docker, to start use the following command:
 
 ```
