@@ -1,0 +1,28 @@
+<template>
+    <v-app>
+        <d-header/>
+        <v-content>
+            <v-container>
+                <router-view/>
+            </v-container>
+        </v-content>
+        <v-footer app>
+            <span>&copy; <a href="https://schoolofnet.com">School Of Net</a> - {{ year }} </span>
+        </v-footer>
+    </v-app>
+</template>
+
+<script>
+import Header from "../partials/Header";
+export default {
+    name: 'App',
+    computed: {
+        year(){
+            return (new Date()).getFullYear();
+        }
+    },
+    components: {
+        'd-header': Header
+    }
+}
+</script>

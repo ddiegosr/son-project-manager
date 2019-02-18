@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+
+    apache-php.son-project-manager:
+        image: webdevops/php-apache-dev:7.2
+        container_name: apache-php.son-project-manager
+        working_dir: /app
+        volumes:
+            - .:/app
+        ports:
+            - "8080:80"
+        links:
+            - mysql.son-project-manager
+        environment:
+            - WEB_DOCUMENT_ROOT=/app/public
+            - XDEBUG_REMOTE_HOST=192.168.0.3
+            - XDEBUG_REMOTE_PORT=9001
+            - XDEBUG_REMOTE_AUTOSTART=on
+            - XDEBUG_REMOTE_CONNECT_BACK=0
+            - PHP_DISPLAY_ERRORS=1
+            - php.error_reporting=E_ALL
+
+    mysql.son-project-manager:
+        image: mysql:5.7
+        container_name: mysql.son-project-manager
+        volumes:
+            - ./mysql:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=project-manager
+            - MYSQL_USER=local
+            - MYSQL_PASSWORD=local
