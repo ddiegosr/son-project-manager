@@ -14,14 +14,16 @@ After the containers are initialized, run the following commands within of the c
 ```
 composer install
 ```
-- For run commands within of container, you can run the following command in the same directory of the _docker-compose.yml_ file, that will be enable the _bash_ in the container.
+*For run commands within of container, you can run the following command in the same directory of the _docker-compose.yml_ file, that will be enable the _bash_ in the container.*
 
-- ```
+```
 docker-compose exec apache-php.son-project-manager bash
 ```
 
 Now the system is available on the http://localhost:8080
 
 For demo, you can use:
+
 **Email:** test@email.com
+
 **Password:** 123456
